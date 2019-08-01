@@ -1,0 +1,15 @@
+.alert {
+    animation-name: notification;
+    animation-duration: 3s;
+}
+
+@keyframes notification {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
