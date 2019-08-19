@@ -8,7 +8,7 @@ class UI {
         }
     }
 
-    static add_task(task, date, check) {
+    static add_task(task, date, check='') {
         var tr = document.createElement('tr')
         tr.innerHTML = `<td>${task}</td>
                         <td>${date}</td>
