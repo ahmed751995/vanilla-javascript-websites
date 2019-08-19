@@ -1,0 +1,50 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #2e5981;
+}
+
+input {
+    height: 30px;
+    border: none;
+    border-bottom: solid #c3c3c3 2px;
+    width: 80%;
+    margin: auto;
+}
+
+ul {
+    text-align: left;
+    list-style: none;
+    border: #c3c3c3 solid 1px;
+    padding-left: 0;    
+}
+
+li {
+    border: #c3c3c3 solid 1px;
+}
+
+.header {
+    padding: 1rem 0.5rem;
+    color: #5e5e5e;
+    font-weight: bold;
+}
+
+.item {
+    padding: 0.5rem 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #2e5981;
+}
