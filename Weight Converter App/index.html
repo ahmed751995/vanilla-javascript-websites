@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weight converter</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background: #444444;
+            ;
+        }
+
+        .number {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4 text-center mt-3">
+                    Weight Converter
+                </h1>
+            </div>
+            <form class="m-auto col-6 offset-3">
+                <div class="form-group">
+                    <input class="form-control form-control-lg pound" type="number" name="quantity" min="0"
+                        placeholder="Enter pounds">
+                </div>
+            </form>
+        </div>
+
+        <div class="col-6 offset-3 d-none card bg-primary mb-1">
+            <div class="card-block p-0">
+                <h4>Grams</h3>
+                    <div id="gram"></div>
+            </div>
+        </div>
+
+        <div class="col-6 offset-3 d-none card bg-success mb-1">
+            <div class="card-block p-0">
+                <h4>KiloGrams</h3>
+                    <p id="kg"></p>
+            </div>
+        </div>
+
+        <div class="col-6 offset-3 d-none card bg-danger mb-1">
+            <div class="card-block p-0">
+                <h4>Ounces</h3>
+                    <p id="ounce"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script>
+        document.querySelector('form').addEventListener('submit', e => e.preventDefault());
+
+        let pound = document.querySelector('.pound');
+        pound.value = '';
+        function calc() {
+            $('.card').removeClass('d-none');
+            let p = parseFloat(pound.value);
+            if (isNaN(p)) {
+                p = 0;
+            }
+            $('#gram').text(p * 453.592);
+            $('#kg').text(p / 2.205);
+            $('#ounce').text(p * 16);
+        }
+
+        pound.addEventListener('input', calc);
+    </script>
+
+</body>
+
+</html>
